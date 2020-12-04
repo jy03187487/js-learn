@@ -1,11 +1,13 @@
+'use strict'
 
+const func = function () {
+    this.a += 1;
+    console.log(`this.a=${this.a}`)
+}
 
 const obj = {
     a: 1,
-    plus: function () {
-        this.a += 1;
-    },
-    test: () => this.a,
+    plus: func,
 }
 
 function closure() {
@@ -18,5 +20,6 @@ function closure() {
 
 obj.plus()
 console.log(obj.a)
-console.log(obj.test())
 console.log(closure()())
+
+func.call(obj)
