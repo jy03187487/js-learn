@@ -23,3 +23,8 @@ console.log(obj.a)
 console.log(closure()())
 
 func.call(obj)
+func.apply(obj)
+func.apply(obj)
+
+const f = func.bind(obj)
+f()
